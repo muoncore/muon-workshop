@@ -1,0 +1,14 @@
+# Demo Scripts
+
+## 1- Services
+
+* Run hello-world-node
+* muon i
+* muon rpc hello-world-node
+* --raw & JQ
+* run hello-world-java
+* muon rpc
+* muon stream
+
+node subscribe to java service
+
