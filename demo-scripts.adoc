@@ -1,14 +1,38 @@
 # Demo Scripts
 
-## 1- Services
+## 1 Services
 
-* Run hello-world-node
+* Run `hello-world-node`
 * muon i
 * muon rpc hello-world-node
 * --raw & JQ
-* run hello-world-java
+* run `hello-world-java`
 * muon rpc
 * muon stream
+* run `tick-tock-client`
+* show it receiving data from hello-world-java
 
-node subscribe to java service
+## 2 MuonJS
 
+* make to run webserver
+* show the html.
+
+*TODO*
+
+## 3 Photon
+
+## 4 First Newton - Streaming Views
+
+* show http-adaptor, emitting access info
+* run http-adaptor.
+* run `newton-streaming-views`
+* show view code
+* hit the url
+* query the view
+* show streaming version of the view
+
+## 5 Complex Logic - Aggregate Roots
+
+
+
+## 6 Process Managers
