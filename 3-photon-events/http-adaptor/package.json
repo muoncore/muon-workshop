@@ -1,0 +1,36 @@
+{
+  "name": "hello-world-node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/hello.js",
+  "scripts": {
+    "start": "node http-adaptor.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/muoncore/muon-workshop.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/muoncore/muon-workshop/issues"
+  },
+  "homepage": "https://github.com/muoncore/muon-workshop#readme",
+  "dependencies": {
+    "uuid": "*",
+    "sendgrid": "4.4.0",
+    "muon-core": "7.2.6",
+    "cors": "*",
+    "body-parser": "*",
+    "nconf": "~0.6",
+    "validator": "~3.x",
+    "signals": "1.0.0"
+  },
+  "devDependencies": {
+    "mocha": "2.5.3",
+    "xunit-file": "1.0.0",
+    "should": "11.1.0",
+    "sinon": "1.17.5",
+    "mocha-sinon": "1.1.5"
+  }
+}
