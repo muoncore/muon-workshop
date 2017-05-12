@@ -33,6 +33,15 @@
 
 ## 5 Complex Logic - Aggregate Roots
 
-
+* run `newton-aggregate`
+* show UserListView
+* show AR. explain event sourcing, explain stream links
+* muon rpc newton-aggregates / '{"name":"someone"}'
+* muon rpc newton-aggregates /user '{"id": "X"}'
+* Do the something update
+* Add a last message field to `User`
+* muon rpc /  - see new schema.
+* show stream endpoint - observe updates
 
 ## 6 Process Managers
+
