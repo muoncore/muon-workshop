@@ -17,13 +17,17 @@ class UserListView extends RebuildingDatastoreView {
         super(streamSubscriptionManager)
     }
 
-    @EventHandler
-    public void on(UserCreated ev) {
-        users[ev.name] = ev.id
-    }
-
     @Override
     protected Collection<Class<? extends AggregateRoot>> aggregateRoots() {
         return [User]
+    }
+
+    @EventHandler
+    void on(UserCreated ev) {
+        users[ev.name] = ev.id
+    }
+
+    String findUserIdByName(String name) {
+        users[name]
     }
 }

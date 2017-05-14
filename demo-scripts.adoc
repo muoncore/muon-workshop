@@ -21,6 +21,21 @@
 
 ## 3 Photon
 
+* muon d
+* muon i photon
+* muon rpc photon /stream-names
+* muon replay XX
+* muon emit
+* muon replay hot
+* muon replay cold
+* muon replay from [order-id]
+
+* run http-adaptor
+* muon replay requests
+
+* run events-jvm
+* add an rpcish api to get the event count.
+
 ## 4 First Newton - Streaming Views
 
 * show http-adaptor, emitting access info
@@ -45,3 +60,18 @@
 
 ## 6 Process Managers
 
+We want a workflow of
+
+* when user created, request approval and provisioning by sending a slack message
+* user is provisioned in some external system. use muon cli to report it is finished
+* use slack to say "account is provisioned"
+* once both are done, process finished.
+
+Show demo
+* show system, same as before
+* added workflow steps to `User`
+* create a new user
+* email sent to user (actually, shown in console)
+* email sent to admin (actually, shown in console)
+* Can confirm account and provision in any order
+* confirm via `muon rpc newton-user-registration /user/confirm '{"id":"xxx"}'
