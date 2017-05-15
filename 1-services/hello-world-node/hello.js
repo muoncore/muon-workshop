@@ -1,6 +1,6 @@
 
 var Muon = require("muon-core")
-var muonurl = process.env.MUON_URL || "amqp://muon:microservices@rabbitmq"
+var muonurl = process.env.MUON_URL || "amqp://muon:microservices@localhost"
 
 logger.info("Muon is enabled, booting up using url " + muonurl)
 
