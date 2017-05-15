@@ -1,3 +1,6 @@
 
 all:
-	python -m SimpleHTTPServer 8080
+	http-server
+
+install:
+	npm install -g http-server
