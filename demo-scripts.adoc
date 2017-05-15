@@ -2,9 +2,10 @@
 
 ## 1 Services
 
+* export LEVEL=error
 * Run `hello-world-node`
 * muon i
-* muon rpc hello-world-node
+* muon rpc hello-world-node /
 * --raw & JQ
 * run `hello-world-java`
 * muon rpc
