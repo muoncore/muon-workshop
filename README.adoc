@@ -1,7 +1,42 @@
 # Muon Intro Workshop
 
+To run the systems in this workshop you need to have a muon development environment setup.
 
+First, follow the instructions at https://github.com/muoncore/muon-starter
 
+This will give you a Muon CLI and a set of docker containers running some services that support some of the demos.
 
+The demos are as follows
+
+## 1-services
+
+Basic muon services, showing message oriented, defined protocols in action. Polyglot.
+
+RPCish and streaming.
+
+## 2-muonjs
+
+Intro muon.js, show the routing possibilities of a Muon system and how it can run happily in a browser.
+
+## 3-photon-events
+
+Introduce the core event protocols and the service that backs them, Photon.
+
+Event sourcing, stream processing.
+
+## 4-first-newton-streaming
+
+Introduce the Newton application framework that sits on top of Muon and Photon. Currently Spring focused.
+
+Use Newton to build CQRS style materialised views from the event streams in Photon.
+
+## 5-aggregate-roots
+
+Implement event sourced aggregate roots in Newton that can easily combine with stream processed views.
+
+## 6-process-manager
+
+Combine events and distributed coordination in the form of a process manager. Layer a business process on top of
+domains instead of hacking around in domain services.
 
 
