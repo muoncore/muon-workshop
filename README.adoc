@@ -7,7 +7,9 @@ To run the workshop demo you will need Docker installed. If you're running Linux
 
 
 Docker for mac: https://docs.docker.com/docker-for-mac/install/#download-docker-for-mac
+
 Java8 https://docs.oracle.com/javase/8/docs/technotes/guides/install/install_overview.html
+
 NodeJS: https://nodejs.org/en/download/
 
 
