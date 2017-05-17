@@ -1,5 +1,20 @@
 # Muon Intro Workshop
 
+
+# Pre-requisities
+
+To run the workshop demo you will need Docker installed. If you're running Linux you should already know how to do that. You will also need to have NodeJS and Java 8 installed.
+
+
+Docker for mac: https://docs.docker.com/docker-for-mac/install/#download-docker-for-mac
+
+Java8 https://docs.oracle.com/javase/8/docs/technotes/guides/install/install_overview.html
+
+NodeJS: https://nodejs.org/en/download/
+
+
+# Getting Started
+
 To run the systems in this workshop you need to have a muon development environment setup.
 
 First, follow the instructions at https://github.com/muoncore/muon-starter
