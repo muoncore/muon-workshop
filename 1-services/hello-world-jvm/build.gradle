@@ -23,15 +23,17 @@ springBoot {
 repositories {
     jcenter()
     maven { url 'https://simplicityitself.artifactoryonline.com/simplicityitself/muon' }
+    maven { url 'https://simplicityitself.artifactoryonline.com/simplicityitself/muon-snapshot' }
 }
 
 dependencies {
-    def muonVersion = "7.2.10"
-    
+    def muonVersion = "7.3.2"
+
     compile "io.muoncore:muon-core:$muonVersion"
-    compile "io.muoncore:muon-transport-amqp:$muonVersion"
-    compile "io.muoncore:muon-discovery-amqp:$muonVersion"
-    compile "io.muoncore:muon-event:$muonVersion"
+    runtime "io.muoncore.transport:muon-amqp:0.0.7"
+    compile "io.muoncore.protocol:stack-rpc:0.0.1"
+    compile "io.muoncore.protocol:stack-reactive-streams:0.0.1"
+
     compile 'org.codehaus.groovy:groovy-all:2.4.11'
     compile 'org.slf4j:slf4j-simple:1.7.21'
 }

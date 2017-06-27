@@ -6,7 +6,7 @@ logger.info("Muon is enabled, booting up using url " + muonurl)
 
 var muon = Muon.create("tick-tock-client", muonurl);
 
-muon.subscribe("stream://hello-world-jvm/ticktock-bad",{},
+muon.subscribe("stream://hello-world-jvm/ticktock",{},
     function(data) {
         console.dir("Data..." + JSON.stringify(data))
     },

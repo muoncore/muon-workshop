@@ -5,13 +5,16 @@ import io.muoncore.MuonBuilder;
 import io.muoncore.config.AutoConfiguration;
 import io.muoncore.config.MuonConfigBuilder;
 import io.muoncore.protocol.reactivestream.server.PublisherLookup;
+import io.muoncore.protocol.reactivestream.server.ReactiveStreamServer;
+import io.muoncore.protocol.rpc.server.RpcServer;
 import reactor.core.processor.CancelException;
 import reactor.rx.broadcast.Broadcaster;
 
 import java.io.IOException;
 import java.util.Collections;
 
-import static io.muoncore.protocol.requestresponse.server.HandlerPredicates.path;
+import static io.muoncore.protocol.rpc.server.HandlerPredicates.path;
+
 
 public class HelloJvm {
 
@@ -20,7 +23,9 @@ public class HelloJvm {
 
         muon.getDiscovery().blockUntilReady();
 
-        muon.handleRequest(path("/"), requestWrapper -> requestWrapper.ok("Hello World"));
+        RpcServer rpc = new RpcServer(muon);
+
+        rpc.handleRequest(path("/"), requestWrapper -> requestWrapper.ok("Hello World"));
 
         tickTock(muon);
     }
@@ -28,7 +33,9 @@ public class HelloJvm {
     private static void tickTock(Muon muon) {
         Broadcaster b = Broadcaster.create();
 
-        muon.publishSource("/ticktock", PublisherLookup.PublisherType.HOT, b);
+        ReactiveStreamServer rs = new ReactiveStreamServer(muon);
+
+        rs.publishSource("/ticktock", PublisherLookup.PublisherType.HOT, b);
 
         Thread t = new Thread(() -> {
             while(true) {

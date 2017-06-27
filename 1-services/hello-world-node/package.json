@@ -17,14 +17,15 @@
   },
   "homepage": "https://github.com/muoncore/muon-workshop#readme",
   "dependencies": {
-    "uuid": "*",
-    "sendgrid": "4.4.0",
-    "muon-core": "7.2.6",
-    "cors": "*",
     "body-parser": "*",
+    "cors": "*",
+    "muon-core": "^7.3.0-1",
+    "muon-stack-reactive-streams": "0.0.2-9",
     "nconf": "~0.6",
-    "validator": "~3.x",
-    "signals": "1.0.0"
+    "sendgrid": "4.4.0",
+    "signals": "1.0.0",
+    "uuid": "*",
+    "validator": "~3.x"
   },
   "devDependencies": {
     "mocha": "2.5.3",

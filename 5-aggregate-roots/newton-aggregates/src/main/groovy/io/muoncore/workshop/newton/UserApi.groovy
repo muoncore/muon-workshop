@@ -52,7 +52,7 @@ class UserApi {
             User user = userRepo.load(id)
             it.ok(user)
         }
-+
+
         muon.handleRequest(path("/user/something")) {
           try {
             String id = it.request.getPayload(Map).id
@@ -73,7 +73,7 @@ class UserApi {
 
     def streamEndpoints() {
 
-        muon.publishGeneratedSource("observeupdates", PublisherLookup.PublisherType.HOT_COLD) {
+        muon.publishGeneratedSource("/observeupdates", PublisherLookup.PublisherType.HOT_COLD) {
             userRepo.subscribeColdHot(it.args.id)
         }
     }

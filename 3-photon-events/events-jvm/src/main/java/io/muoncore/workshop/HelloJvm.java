@@ -9,18 +9,9 @@ import io.muoncore.protocol.event.Event;
 import io.muoncore.protocol.event.client.DefaultEventClient;
 import io.muoncore.protocol.event.client.EventClient;
 import io.muoncore.protocol.event.client.EventReplayMode;
-import io.muoncore.protocol.reactivestream.client.ReactiveStreamClient;
-import io.muoncore.protocol.reactivestream.server.PublisherLookup;
-import org.reactivestreams.Subscriber;
-import org.reactivestreams.Subscription;
-import reactor.core.processor.CancelException;
 import reactor.rx.broadcast.Broadcaster;
 
 import java.io.IOException;
-import java.net.URI;
-import java.util.Collections;
-
-import static io.muoncore.protocol.requestresponse.server.HandlerPredicates.path;
 
 public class HelloJvm {
 
