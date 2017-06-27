@@ -3,6 +3,8 @@ var Muon = require("muon-core")
 var RS = require("muon-stack-reactive-streams")
 var muonurl = process.env.MUON_URL || "amqp://muon:microservices@localhost"
 
+require("muon-amqp").attach(Muon)
+
 logger.info("Muon is enabled, booting up using url " + muonurl)
 
 var muon = Muon.create("hello-world-node", muonurl);
