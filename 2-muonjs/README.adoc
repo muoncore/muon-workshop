@@ -1,0 +1,5 @@
+# MuonJS
+
+MuonJS takes Muon-node and runs it through a transpiler to be able to run within a browser environment. Then, the transport and discovery are replaced with a dedicated websocket connection to the server side MuonJS Gateway. The Gateway gives the browsers visibility of server side services and acts as a message channel router, enabling Muon clients in the browser to open bi directional channels to the back end services via the gateway.
+
+This is highly experimental, and not production ready. The workshop is currently outdated.

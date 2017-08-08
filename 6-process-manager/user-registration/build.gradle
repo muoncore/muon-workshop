@@ -31,13 +31,11 @@ dependencies {
     compile('org.springframework.boot:spring-boot-starter')
     testCompile('org.springframework.boot:spring-boot-starter-test')
 
-    def muonVersion = "7.2.10"
-    compile "io.muoncore:muon-core:$muonVersion"
-    compile "io.muoncore:muon-transport-amqp:$muonVersion"
-    compile "io.muoncore:muon-discovery-amqp:$muonVersion"
+    compile "io.muoncore:muon-core:7.3.3"
+    runtime "io.muoncore.transport:muon-amqp:0.0.8"
     compile 'org.codehaus.groovy:groovy-all:2.4.10:indy'
 
-    compile 'io.muoncore.newton:newton-spring-starter:0.0.9'
+    compile 'io.muoncore.newton:newton-spring-starter:0.0.10'
 
     compile 'io.reactivex.rxjava2:rxjava:2.1.0'
 

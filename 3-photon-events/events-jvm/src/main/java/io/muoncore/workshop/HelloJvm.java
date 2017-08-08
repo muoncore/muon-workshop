@@ -9,11 +9,17 @@ import io.muoncore.protocol.event.Event;
 import io.muoncore.protocol.event.client.DefaultEventClient;
 import io.muoncore.protocol.event.client.EventClient;
 import io.muoncore.protocol.event.client.EventReplayMode;
+import io.muoncore.protocol.rpc.server.RpcServer;
 import reactor.rx.broadcast.Broadcaster;
 
 import java.io.IOException;
+import java.util.Collections;
+
+import static io.muoncore.protocol.rpc.server.HandlerPredicates.*;
 
 public class HelloJvm {
+
+    static int numRequests = 0;
 
     public static void main(String[] args) throws IOException {
         Gson gson = new Gson();
@@ -28,10 +34,16 @@ public class HelloJvm {
 
         s.consume(event -> {
           System.out.println("EVENT: " + gson.toJson(event));
+          numRequests++;
         });
 
         client.replay("requests", EventReplayMode.REPLAY_THEN_LIVE, s);
 
+        RpcServer rpcServer = new RpcServer(muon);
+
+        rpcServer.handleRequest(all(), requestWrapper -> {
+            requestWrapper.ok(Collections.singletonMap("requests", numRequests));
+        });
     }
 
 

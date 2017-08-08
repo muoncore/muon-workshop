@@ -19,7 +19,9 @@
   "dependencies": {
     "uuid": "*",
     "sendgrid": "4.4.0",
-    "muon-core": "7.2.6",
+    "muon-amqp": "0.0.1-17",
+    "muon-core": "^7.3.0-73",
+    "muon-stack-reactive-streams": "0.0.2-42",
     "cors": "*",
     "body-parser": "*",
     "nconf": "~0.6",
