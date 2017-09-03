@@ -12,6 +12,7 @@ import io.muoncore.exception.MuonEncodingException;
 import io.muoncore.protocol.reactivestream.server.PublisherLookup;
 import io.muoncore.protocol.reactivestream.server.ReactiveStreamServer;
 import io.muoncore.protocol.rpc.server.RpcServer;
+import io.muoncore.transport.tcp.TCPTransportFactory;
 import reactor.core.processor.CancelException;
 import reactor.rx.broadcast.Broadcaster;
 
@@ -19,6 +20,7 @@ import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.lang.reflect.Type;
 import java.util.Collections;
+import java.util.Map;
 
 import static io.muoncore.protocol.rpc.server.HandlerPredicates.path;
 
@@ -33,6 +35,7 @@ public class HelloJvm {
         RpcServer rpc = new RpcServer(muon);
 
         rpc.handleRequest(path("/"), requestWrapper -> {
+                    System.out.println(requestWrapper.getRequest().getPayload(Map.class));
                     requestWrapper.ok("Hello World");
                 }
             );
@@ -68,12 +71,9 @@ public class HelloJvm {
         AutoConfiguration config = MuonConfigBuilder
                 .withServiceIdentifier("hello-world-jvm")
                 .addWriter( autoConfiguration -> {
-        if (System.getenv().containsKey("MUON_URL")) {
-            autoConfiguration.getProperties().put("amqp.transport.url", System.getenv().get("MUON_URL"));
-            autoConfiguration.getProperties().put("amqp.discovery.url", System.getenv().get("MUON_URL"));
-        }
+                    //use the TCP transport
+            autoConfiguration.getProperties().put("muon.transport.factories", TCPTransportFactory.class.getCanonicalName());
         }).build();
-
 
         return MuonBuilder
                 .withConfig(config)
