@@ -1,0 +1,37 @@
+buildscript {
+    ext {
+        springBootVersion = '1.5.2.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+apply plugin: 'groovy'
+apply plugin: 'spring-boot'
+
+sourceCompatibility = 1.8
+version = '1.0'
+
+springBoot {
+    mainClass = 'io.muoncore.workshop.RxMongo'
+}
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    compile 'org.mongodb:mongodb-driver-reactivestreams:1.6.0'
+    compile 'io.reactivex.rxjava2:rxjava:2.1.5'
+    compile "io.muoncore:muon-core:7.4.1"
+    runtime "io.muoncore.transport:muon-amqp:0.0.15"
+    compile "io.muoncore.protocol:stack-rpc:0.0.5"
+    compile "io.muoncore.protocol:stack-reactive-streams:0.0.4"
+
+    compile 'org.codehaus.groovy:groovy-all:2.4.11'
+    compile 'org.slf4j:slf4j-simple:1.7.21'
+}
